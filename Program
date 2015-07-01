@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+
+namespace sagment2
+{
+    public class Program
+    {
+
+        public static void Main(string[] args)
+        {
+            checknumber();
+        }
+
+        public static void checknumber()
+        {
+            try
+            {
+                Console.WriteLine("Enter your guess number between 1 to 100..");
+                int value = Convert.ToInt32(Console.ReadLine());
+
+
+
+                if (value > 100 || value < 1)
+                {
+                    Console.WriteLine("Invalid number.Try again.");
+                    //int number = Convert.ToInt32(Console.ReadLine());
+                    checknumber();
+                }
+
+                if (value == 42)
+                {
+                    Console.WriteLine("correct.");
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect.");
+                    checknumber();
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid operation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                checknumber();
+            }
+        }
+    }
+}
